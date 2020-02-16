@@ -1,0 +1,5 @@
+set sysroot /Users/marcos/tizen-studio/tools/smart-build-interface/../../platforms/tizen-5.5/wearable/rootstraps/wearable-5.5-device.core
+set debug-file-directory /Users/marcos/tizen-studio/tools/smart-build-interface/../../platforms/tizen-5.5/wearable/rootstraps/wearable-5.5-device.core/usr/lib/debug
+set solib-search-path /Users/marcos/workspace/ContCarboidratos/Debug
+dir /Users/marcos/tizen-studio/tools/smart-build-interface/../../platforms/tizen-5.5/wearable/rootstraps/wearable-5.5-device.core/usr/src/debug
+sharedlibrary

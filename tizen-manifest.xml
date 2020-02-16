@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<manifest xmlns="http://tizen.org/ns/packages" api-version="2.3.2" package="org.mvrpl.contcarboidratos" version="1.0.0">
+    <author email="mvrpl.me@gmail.com" href="https://mvrpl.dev">mvrpl</author>
+    <profile name="wearable"/>
+    <ui-application appid="org.mvrpl.contcarboidratos" exec="contcarboidratos" multiple="false" nodisplay="false" taskmanage="true" type="capp">
+        <label>ContCarboidratos</label>
+        <icon>ic_launcher_round.png</icon>
+    </ui-application>
+    <privileges>
+        <privilege>http://tizen.org/privilege/mediastorage</privilege>
+        <privilege>http://tizen.org/privilege/packagemanager.info</privilege>
+    </privileges>
+</manifest>

@@ -7,66 +7,10 @@
 
 const char* database = "/opt/usr/home/owner/data/config.db";
 
-/* C-DICT */
-typedef struct dict_t_struct {
-    char *key;
-    int value;
-    struct dict_t_struct *next;
-} dict_t;
-
-dict_t **dictAlloc(void) {
-    return malloc(sizeof(dict_t));
-}
-
-void dictDealloc(dict_t **dict) {
-    free(dict);
-}
-
-int getItem(dict_t *dict, char *key) {
-    dict_t *ptr;
-    for (ptr = dict; ptr != NULL; ptr = ptr->next) {
-        if (strcmp(ptr->key, key) == 0) {
-            return ptr->value;
-        }
-    }
-
-    return 0;
-}
-
-void delItem(dict_t **dict, char *key) {
-    dict_t *ptr, *prev;
-    for (ptr = *dict, prev = NULL; ptr != NULL; prev = ptr, ptr = ptr->next) {
-        if (strcmp(ptr->key, key) == 0) {
-            if (ptr->next != NULL) {
-                if (prev == NULL) {
-                    *dict = ptr->next;
-                } else {
-                    prev->next = ptr->next;
-                }
-            } else if (prev != NULL) {
-                prev->next = NULL;
-            } else {
-                *dict = NULL;
-            }
-
-            free(ptr->key);
-            free(ptr);
-
-            return;
-        }
-    }
-}
-
-void addItem(dict_t **dict, char *key, int value) {
-    delItem(dict, key); /* If we already have a item with this key, delete it. */
-    dict_t *d = malloc(sizeof(struct dict_t_struct));
-    d->key = malloc(strlen(key)+1);
-    strcpy(d->key, key);
-    d->value = value;
-    d->next = *dict;
-    *dict = d;
-}
-/* C-DICT */
+struct Pair {
+  char *key;
+  int value;
+};
 
 typedef struct appdata {
 	Evas_Object *win;
@@ -98,32 +42,48 @@ loads_prefs() {
 	sqlite3_exec(db, droptb, 0, 0, &err);*/
 	char *sql = "CREATE TABLE IF NOT EXISTS CONF (row_id TINYINT PRIMARY KEY CHECK (row_id = 0),fator_sens INTEGER NOT NULL,uig INTEGER NOT NULL,glic_alv INTEGER NOT NULL);";
 	sqlite3_exec(db, sql, 0, 0, &err);
-	sqlite3_exec(db, "SELECT fator_sens, uig, glic_alv FROM CONF", callback, 0, &err);
-	sqlite3_close(db);
-}
-
-int callback(void *NotUsed, int argc, char **argv, char **colNames){
-	for(int i=0; i<argc; i++){
-		preference_set_int(colNames[i], (int)argv[i]);
+	sqlite3_stmt* stmt = 0;
+	sqlite3_prepare_v2(db, "SELECT fator_sens, uig, glic_alv FROM CONF", -1, &stmt, 0);
+	sqlite3_exec(db, "BEGIN TRANSACTION", 0, 0, 0);
+	while ( sqlite3_step(stmt) == SQLITE_ROW ) {
+		for ( int colIndex = 0; colIndex < 3; colIndex++ ) {
+			if (colIndex == 0){
+				preference_set_int("fator_sens", sqlite3_column_int(stmt, colIndex));
+			} else if (colIndex == 1) {
+				preference_set_int("uig", sqlite3_column_int(stmt, colIndex));
+			} else if (colIndex == 2) {
+				preference_set_int("glic_alv", sqlite3_column_int(stmt, colIndex));
+			}
+		}
 	}
-	return 0;
+	sqlite3_exec(db, "END TRANSACTION", 0, 0, &err);
+	sqlite3_finalize(stmt);
+	sqlite3_close(db);
 }
 
 static void
-set_pref(dict_t dict) {
+set_pref(int vals[]) {
 	sqlite3 *db;
 	char *err = NULL;
 	char sql[200];
-	sprintf(sql, "INSERT OR REPLACE INTO CONF (row_id, fator_sens, uig, glic_alv) VALUES(0, %d, %d, %d);", getItem(&dict, "fator_sens"), getItem(&dict, "uig"), getItem(&dict, "glic_alv"));
+	sprintf(sql, "INSERT OR REPLACE INTO CONF (row_id, fator_sens, uig, glic_alv) VALUES(0, %d, %d, %d);", vals[0], vals[1], vals[2]);
 	sqlite3_open(database, &db);
 	sqlite3_exec(db, sql, 0, 0, &err);
 	sqlite3_close(db);
-	char *keys[] = {"fator_sens","uig","glic_alv",NULL}, **n;
-	n = keys;
-	while (*n != NULL) {
-		char *key = *n++;
-		preference_set_int(n++, getItem(&dict, key));
+	struct Pair map[] = {{"fator_sens", vals[0]}, {"uig", vals[1]}, {"glic_alv", vals[2]}};
+	int size = sizeof(map)/sizeof(map[0]);
+	for (int i = 0; i < size; i++) {
+		preference_set_int(map[i].key, map[i].value);
 	}
+}
+
+static int
+cal_uis(int glic, int gcarb) {
+	int glic_alv, uig, fator_sens;
+	preference_get_int("glic_alv", &glic_alv);
+	preference_get_int("uig", &uig);
+	preference_get_int("fator_sens", &fator_sens);
+	return (glic - glic_alv) / (fator_sens + (gcarb / uig));
 }
 
 static void
@@ -160,18 +120,13 @@ create_base_gui(appdata_s *ad)
 	ad->label = elm_label_add(ad->conform);
 
 	/* BUTTON */
-	dict_t **dict = dictAlloc();
-	addItem(dict, "fator_sens", 10);
-	addItem(dict, "uig", 10);
-	addItem(dict, "glic_alv", 90);
-	set_pref(**dict);
-	dictDealloc(dict);
+	int confs[] = {10, 10, 90};
+	set_pref(confs);
 
-	const char *glic_alv = "glic_alv";
-	int integer_output;
-	preference_get_int(glic_alv, &integer_output);
+	int calc_output = cal_uis(359, 25);
+
 	char s[100];
-	sprintf(s, "<align=center>Hello %d!</align><br>", integer_output);
+	sprintf(s, "<align=center>Hello %d!</align><br>", calc_output);
 	/* BUTTON */
 
 	elm_object_text_set(ad->label, s);

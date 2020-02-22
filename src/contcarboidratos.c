@@ -83,12 +83,13 @@ cal_uis(int glic, int gcarb) {
 	preference_get_int("glic_alv", &glic_alv);
 	preference_get_int("uig", &uig);
 	preference_get_int("fator_sens", &fator_sens);
-	return (glic - glic_alv) / (fator_sens + (gcarb / uig));
+	return ceil(((double)((float)glic - (float)glic_alv) / (float)fator_sens) + ((float)gcarb / (float)uig));
 }
 
 static void
 create_base_gui(appdata_s *ad)
 {
+	Evas_Object * button;
 	/* Window */
 	/* Create and initialize elm_win.
 	   elm_win is mandatory to manipulate window. */
@@ -119,6 +120,13 @@ create_base_gui(appdata_s *ad)
 	   Modify this part to change the view. */
 	ad->label = elm_label_add(ad->conform);
 
+	button = elm_button_add(ad->conform);
+	elm_object_text_set(button, "conf");
+	evas_object_size_hint_weight_set(button, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+	evas_object_size_hint_align_set(button, EVAS_HINT_FILL, EVAS_HINT_FILL);
+	elm_object_part_content_set(ad->conform, "default", button);
+	evas_object_show(button);
+
 	/* BUTTON */
 	int confs[] = {10, 10, 90};
 	set_pref(confs);
@@ -126,7 +134,7 @@ create_base_gui(appdata_s *ad)
 	int calc_output = cal_uis(359, 25);
 
 	char s[100];
-	sprintf(s, "<align=center>Hello %d!</align><br>", calc_output);
+	sprintf(s, "<align=center><font_size=60><color=#C0C0C0>%d</color></font_size></align><br>", calc_output);
 	/* BUTTON */
 
 	elm_object_text_set(ad->label, s);

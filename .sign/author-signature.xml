@@ -4,7 +4,7 @@
 <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
 <Reference URI="bin%2Fcontcarboidratos">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>8h44nyg8E91hZ7xsaa0SRp1yWjQ6DAgkANwM9cPQjl8=</DigestValue>
+<DigestValue>ofbg/X50biMsZe8YDYYEhYO6wKCdAGG1cp2aFF5mhyA=</DigestValue>
 </Reference>
 <Reference URI="lib%2F.DS_Store">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -31,11 +31,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-Mugn7+rE/0I4ufXePtKOIOW8cfKq6HEkOSkvzapYue/Jgt2leoTEeV8xT0jtfuXYcvCVFe/FJRsO
-9oPrqb0x3gt+M8Tf4ZI5dMJku1sfgCSYrr0et5nYO0jwdYmcxBr2MS5Z0YhiZy50Rgv0MvOAdZiZ
-pz6hqSYVW69+0H7apaPIrOEJu/CgL7qroHnMqflRbyr3el05BDYkjBsb/KJHai5dLMe9J+qz7FVx
-SeYKZebykZFCBE4Apj2xe5ekRn0oC92XE5hDdRzlj4utdHibzm7Z9RfcwNC7aUMX+IoWXbjcvsVp
-9ksWuhlHfCEH9KbmW/TeJvYifOex6o9IHmgKzQ==
+RM5fwax9QPFkDPY48LpiXk/dSJ9JLbxDi9gAMeGoPaZq6AnwskeawGwkwNHqyv7Y7TGlgv/Ht5po
+eSKh89imttPt2p+AM6QocQkVLDi5gQHz1I+sUB3Za2+8/bZesXpFSpQvqYuJvoKyFw7g1Rg8g+VV
+JhakU52lPG+uZr55HUzeyS6Xp0TYyz0z4HEdJAqscYSYSThADH7VbY2Y/biXmwoFZby+g9B5ddpc
+9YMPWRjwTA+OKwJ0GTHe639kKvZQ7LBkFHjKeGYsZIoZpqzx30HONPon5h+ayYSCY1rfhdJXVnxf
+bm5+Y1Zej8IpXI8Xq9R6AUcSRMbUAf6KpCfCPw==
 </SignatureValue>
 <KeyInfo>
 <X509Data>

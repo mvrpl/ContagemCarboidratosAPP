@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sqlite3.h>
+#include <Elementary.h>
 
 const char* database = "/opt/usr/home/owner/data/config.db";
 
@@ -16,7 +17,12 @@ typedef struct appdata {
 	Evas_Object *win;
 	Evas_Object *conform;
 	Evas_Object *label;
+	Evas_Object *confButton;
+	Evas_Object *glicIn;
+	Evas_Object *carbIn;
 } appdata_s;
+
+int glicIn, carbIn;
 
 static void
 win_delete_request_cb(void *data, Evas_Object *obj, void *event_info)
@@ -77,19 +83,28 @@ set_pref(int vals[]) {
 	}
 }
 
-static int
-cal_uis(int glic, int gcarb) {
+static void
+cal_uis(void *data, Evas_Object *obj, void *event_info) {
+	appdata_s *ad = (appdata_s *) data;
 	int glic_alv, uig, fator_sens;
 	preference_get_int("glic_alv", &glic_alv);
 	preference_get_int("uig", &uig);
 	preference_get_int("fator_sens", &fator_sens);
-	return ceil(((double)((float)glic - (float)glic_alv) / (float)fator_sens) + ((float)gcarb / (float)uig));
+	const char *valorGlic = elm_entry_entry_get(ad->glicIn);
+	const char *valorCarb = elm_entry_entry_get(ad->carbIn);
+	int glicIn = atoi(valorGlic);
+	int carbIn = atoi(valorCarb);
+	if (valorGlic != NULL && valorCarb != NULL){
+		int result = ceil(((double)((float)glicIn - (float)glic_alv) / (float)fator_sens) + ((float)carbIn / (float)uig));
+		char s[100];
+		sprintf(s, "<align=center><font_size=60><color=#C0C0C0>%d</color></font_size></align><br>", result);
+		elm_object_text_set(obj, s);
+	}
 }
 
 static void
 create_base_gui(appdata_s *ad)
 {
-	Evas_Object * button;
 	/* Window */
 	/* Create and initialize elm_win.
 	   elm_win is mandatory to manipulate window. */
@@ -118,28 +133,53 @@ create_base_gui(appdata_s *ad)
 	/* Label */
 	/* Create an actual view of the base gui.
 	   Modify this part to change the view. */
-	ad->label = elm_label_add(ad->conform);
 
-	button = elm_button_add(ad->conform);
-	elm_object_text_set(button, "conf");
-	evas_object_size_hint_weight_set(button, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-	evas_object_size_hint_align_set(button, EVAS_HINT_FILL, EVAS_HINT_FILL);
-	elm_object_part_content_set(ad->conform, "default", button);
-	evas_object_show(button);
+	Evas_Object* table = elm_table_add(ad->conform);
+	elm_table_homogeneous_set(table, EINA_TRUE);
+	elm_object_content_set(ad->conform, table);
+	evas_object_resize(table, 360, 360);
+	evas_object_show(table);
+
+	Evas_Object *editGlic = ad->glicIn = elm_entry_add(table);
+	elm_entry_single_line_set(editGlic, EINA_TRUE);
+	elm_entry_scrollable_set(editGlic, EINA_FALSE);
+	elm_object_part_text_set(editGlic, "elm.guide", "<align=center>Glicemia</align>");
+	elm_entry_input_panel_layout_set(editGlic,ELM_INPUT_PANEL_LAYOUT_NUMBERONLY);
+	elm_table_pack(table, editGlic, 0, 0, 1, 2);
+	elm_entry_text_style_user_push(editGlic, "DEFAULT='font=Tizen:style=Light font_size=50 color=#fff align=center'");
+	evas_object_show(editGlic);
+
+	Evas_Object *editCarb = ad->carbIn = elm_entry_add(table);
+	elm_entry_single_line_set(editCarb, EINA_TRUE);
+	elm_entry_scrollable_set(editCarb, EINA_FALSE);
+	elm_object_part_text_set(editCarb, "elm.guide", "<align=center>Carboidratos</align>");
+	elm_entry_input_panel_layout_set(editCarb,ELM_INPUT_PANEL_LAYOUT_NUMBERONLY);
+	elm_table_pack(table, editCarb, 0, 1, 2, 1);
+	elm_entry_text_style_user_push(editCarb, "DEFAULT='font=Tizen:style=Light font_size=50 color=#fff align=center'");
+	evas_object_show(editCarb);
+
+	//ad->confButton = elm_button_add(ad->conform);
+	//evas_object_resize(ad->confButton, 360, 360 / 4);
+	//elm_object_style_set(ad->confButton, "bottom");
+	//elm_object_text_set(ad->confButton, "Config.");
+	//evas_object_smart_callback_add(ad->confButton, "clicked", btn_clicked_cb, ad);
+	//evas_object_show(ad->confButton);
 
 	/* BUTTON */
 	int confs[] = {10, 10, 90};
 	set_pref(confs);
 
-	int calc_output = cal_uis(359, 25);
-
 	char s[100];
-	sprintf(s, "<align=center><font_size=60><color=#C0C0C0>%d</color></font_size></align><br>", calc_output);
+	sprintf(s, "<align=center><font_size=60><color=#C0C0C0>0</color></font_size></align><br>");
 	/* BUTTON */
 
+	ad->label = elm_label_add(table);
 	elm_object_text_set(ad->label, s);
 	evas_object_size_hint_weight_set(ad->label, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-	elm_object_content_set(ad->conform, ad->label);
+	elm_table_pack(table, ad->label, 0, 2, 1, 2);
+	evas_object_smart_callback_add(ad->label, "clicked", cal_uis, ad);
+	evas_object_show(ad->label);
+	//elm_object_content_set(ad->conform, ad->label);
 
 	/* Show window after base gui is set up */
 	evas_object_show(ad->win);

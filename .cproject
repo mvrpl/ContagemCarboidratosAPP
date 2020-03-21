@@ -53,13 +53,13 @@
                                 								
                                 <option defaultValue="false" id="sbi.gnu.cpp.compiler.option.misc.pic.core.2025137829" name="-fPIC option" superClass="sbi.gnu.cpp.compiler.option.misc.pic.core" valueType="boolean"/>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.cpp.compiler.option.428417688" superClass="sbi.gnu.cpp.compiler.option" valueType="userObjs">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.cpp.compiler.option.428417688" name="Tizen-Target" superClass="sbi.gnu.cpp.compiler.option" valueType="userObjs">
                                     									
                                     <listOptionValue builtIn="false" value="wearable-5.5-device.core_llvm40.armel"/>
                                     								
                                 </option>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.cpp.compiler.option.frameworks_inc.core.430600794" superClass="sbi.gnu.cpp.compiler.option.frameworks_inc.core" valueType="includePath">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.cpp.compiler.option.frameworks_inc.core.430600794" name="Tizen-Frameworks-Include-Path" superClass="sbi.gnu.cpp.compiler.option.frameworks_inc.core" valueType="includePath">
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${SBI_SYSROOT}/usr/include/libxml2&quot;"/>
                                     									
@@ -253,7 +253,7 @@
                                     								
                                 </option>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.cpp.compiler.option.frameworks_cflags.core.1240840552" superClass="sbi.gnu.cpp.compiler.option.frameworks_cflags.core" valueType="stringList">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.cpp.compiler.option.frameworks_cflags.core.1240840552" name="Tizen-Frameworks-Other-Cflags" superClass="sbi.gnu.cpp.compiler.option.frameworks_cflags.core" valueType="stringList">
                                     									
                                     <listOptionValue builtIn="false" value="${TC_COMPILER_MISC}"/>
                                     									
@@ -277,19 +277,19 @@
                                     								
                                 </option>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.585237313" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.585237313" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/inc}&quot;"/>
                                     								
                                 </option>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.cpp.compiler.option.frameworks.core.2046030858" superClass="sbi.gnu.cpp.compiler.option.frameworks.core" valueType="userObjs">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.cpp.compiler.option.frameworks.core.2046030858" name="Tizen-Frameworks" superClass="sbi.gnu.cpp.compiler.option.frameworks.core" valueType="userObjs">
                                     									
                                     <listOptionValue builtIn="false" value="Native_API"/>
                                     								
                                 </option>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.cpp.compiler.option.preprocessor.def.deprecation.147564552" superClass="sbi.gnu.cpp.compiler.option.preprocessor.def.deprecation" valueType="definedSymbols">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.cpp.compiler.option.preprocessor.def.deprecation.147564552" name="Defined symbols (-D)" superClass="sbi.gnu.cpp.compiler.option.preprocessor.def.deprecation" valueType="definedSymbols">
                                     									
                                     <listOptionValue builtIn="false" value="TIZEN_DEPRECATION"/>
                                     									
@@ -311,13 +311,13 @@
                                 								
                                 <option defaultValue="false" id="sbi.gnu.c.compiler.option.misc.pic.core.1352184567" name="-fPIC option" superClass="sbi.gnu.c.compiler.option.misc.pic.core" valueType="boolean"/>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.c.compiler.option.1076689621" superClass="sbi.gnu.c.compiler.option" valueType="userObjs">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.c.compiler.option.1076689621" name="Tizen-Target" superClass="sbi.gnu.c.compiler.option" valueType="userObjs">
                                     									
                                     <listOptionValue builtIn="false" value="wearable-5.5-device.core_llvm40.armel"/>
                                     								
                                 </option>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.c.compiler.option.frameworks_inc.core.1086122300" superClass="sbi.gnu.c.compiler.option.frameworks_inc.core" valueType="includePath">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.c.compiler.option.frameworks_inc.core.1086122300" name="Tizen-Frameworks-Include-Path" superClass="sbi.gnu.c.compiler.option.frameworks_inc.core" valueType="includePath">
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${SBI_SYSROOT}/usr/include/libxml2&quot;"/>
                                     									
@@ -511,7 +511,7 @@
                                     								
                                 </option>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.c.compiler.option.frameworks_cflags.core.301754503" superClass="sbi.gnu.c.compiler.option.frameworks_cflags.core" valueType="stringList">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.c.compiler.option.frameworks_cflags.core.301754503" name="Tizen-Frameworks-Other-Cflags" superClass="sbi.gnu.c.compiler.option.frameworks_cflags.core" valueType="stringList">
                                     									
                                     <listOptionValue builtIn="false" value="${TC_COMPILER_MISC}"/>
                                     									
@@ -535,19 +535,19 @@
                                     								
                                 </option>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.include.paths.848417979" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.include.paths.848417979" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/inc}&quot;"/>
                                     								
                                 </option>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.c.compiler.option.frameworks.core.485709102" superClass="sbi.gnu.c.compiler.option.frameworks.core" valueType="userObjs">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.c.compiler.option.frameworks.core.485709102" name="Tizen-Frameworks" superClass="sbi.gnu.c.compiler.option.frameworks.core" valueType="userObjs">
                                     									
                                     <listOptionValue builtIn="false" value="Native_API"/>
                                     								
                                 </option>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.c.compiler.option.preprocessor.def.symbols.deprecation.1787389685" superClass="sbi.gnu.c.compiler.option.preprocessor.def.symbols.deprecation" valueType="definedSymbols">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.c.compiler.option.preprocessor.def.symbols.deprecation.1787389685" name="Defined symbols (-D)" superClass="sbi.gnu.c.compiler.option.preprocessor.def.symbols.deprecation" valueType="definedSymbols">
                                     									
                                     <listOptionValue builtIn="false" value="TIZEN_DEPRECATION"/>
                                     									
@@ -571,7 +571,7 @@
                                 								
                                 <option defaultValue="false" id="sbi.gnu.cpp.linker.option.noundefined.core.1804686810" name="Report unresolved symbol references (-Wl,--no-undefined)" superClass="sbi.gnu.cpp.linker.option.noundefined.core" valueType="boolean"/>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.cpp.linker.option.frameworks_lflags.core.1542962142" superClass="sbi.gnu.cpp.linker.option.frameworks_lflags.core" valueType="stringList">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.cpp.linker.option.frameworks_lflags.core.1542962142" name="Tizen-Frameworks-Other-Lflags" superClass="sbi.gnu.cpp.linker.option.frameworks_lflags.core" valueType="stringList">
                                     									
                                     <listOptionValue builtIn="false" value="${TC_LINKER_MISC}"/>
                                     									
@@ -589,7 +589,7 @@
                                     								
                                 </option>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.paths.1208465077" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.paths.1208465077" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib}&quot;"/>
                                     								
@@ -632,8 +632,6 @@
                     <sourceEntries>
                         						
                         <entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="inc"/>
-                        						
-                        <entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="res"/>
                         						
                         <entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="shared"/>
                         						
@@ -699,13 +697,13 @@
                                 								
                                 <option defaultValue="false" id="sbi.gnu.cpp.compiler.option.misc.pic.core.712185611" name="-fPIC option" superClass="sbi.gnu.cpp.compiler.option.misc.pic.core" valueType="boolean"/>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.cpp.compiler.option.427276275" superClass="sbi.gnu.cpp.compiler.option" valueType="userObjs">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.cpp.compiler.option.427276275" name="Tizen-Target" superClass="sbi.gnu.cpp.compiler.option" valueType="userObjs">
                                     									
                                     <listOptionValue builtIn="false" value="wearable-5.5-emulator.core_llvm40.i386"/>
                                     								
                                 </option>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.cpp.compiler.option.frameworks_inc.core.1401517003" superClass="sbi.gnu.cpp.compiler.option.frameworks_inc.core" valueType="includePath">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.cpp.compiler.option.frameworks_inc.core.1401517003" name="Tizen-Frameworks-Include-Path" superClass="sbi.gnu.cpp.compiler.option.frameworks_inc.core" valueType="includePath">
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${SBI_SYSROOT}/usr/include/libxml2&quot;"/>
                                     									
@@ -899,7 +897,7 @@
                                     								
                                 </option>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.cpp.compiler.option.frameworks_cflags.core.1331934723" superClass="sbi.gnu.cpp.compiler.option.frameworks_cflags.core" valueType="stringList">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.cpp.compiler.option.frameworks_cflags.core.1331934723" name="Tizen-Frameworks-Other-Cflags" superClass="sbi.gnu.cpp.compiler.option.frameworks_cflags.core" valueType="stringList">
                                     									
                                     <listOptionValue builtIn="false" value="${TC_COMPILER_MISC}"/>
                                     									
@@ -923,13 +921,13 @@
                                     								
                                 </option>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.879675693" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.879675693" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/inc}&quot;"/>
                                     								
                                 </option>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.cpp.compiler.option.frameworks.core.1515268517" superClass="sbi.gnu.cpp.compiler.option.frameworks.core" valueType="userObjs">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.cpp.compiler.option.frameworks.core.1515268517" name="Tizen-Frameworks" superClass="sbi.gnu.cpp.compiler.option.frameworks.core" valueType="userObjs">
                                     									
                                     <listOptionValue builtIn="false" value="Native_API"/>
                                     								
@@ -947,13 +945,13 @@
                                 								
                                 <option defaultValue="false" id="sbi.gnu.c.compiler.option.misc.pic.core.1089437448" name="-fPIC option" superClass="sbi.gnu.c.compiler.option.misc.pic.core" valueType="boolean"/>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.c.compiler.option.2042435037" superClass="sbi.gnu.c.compiler.option" valueType="userObjs">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.c.compiler.option.2042435037" name="Tizen-Target" superClass="sbi.gnu.c.compiler.option" valueType="userObjs">
                                     									
                                     <listOptionValue builtIn="false" value="wearable-5.5-emulator.core_llvm40.i386"/>
                                     								
                                 </option>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.c.compiler.option.frameworks_inc.core.1325311460" superClass="sbi.gnu.c.compiler.option.frameworks_inc.core" valueType="includePath">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.c.compiler.option.frameworks_inc.core.1325311460" name="Tizen-Frameworks-Include-Path" superClass="sbi.gnu.c.compiler.option.frameworks_inc.core" valueType="includePath">
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${SBI_SYSROOT}/usr/include/libxml2&quot;"/>
                                     									
@@ -1147,7 +1145,7 @@
                                     								
                                 </option>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.c.compiler.option.frameworks_cflags.core.1991913272" superClass="sbi.gnu.c.compiler.option.frameworks_cflags.core" valueType="stringList">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.c.compiler.option.frameworks_cflags.core.1991913272" name="Tizen-Frameworks-Other-Cflags" superClass="sbi.gnu.c.compiler.option.frameworks_cflags.core" valueType="stringList">
                                     									
                                     <listOptionValue builtIn="false" value="${TC_COMPILER_MISC}"/>
                                     									
@@ -1171,13 +1169,13 @@
                                     								
                                 </option>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.include.paths.745978011" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.include.paths.745978011" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/inc}&quot;"/>
                                     								
                                 </option>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.c.compiler.option.frameworks.core.422160071" superClass="sbi.gnu.c.compiler.option.frameworks.core" valueType="userObjs">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.c.compiler.option.frameworks.core.422160071" name="Tizen-Frameworks" superClass="sbi.gnu.c.compiler.option.frameworks.core" valueType="userObjs">
                                     									
                                     <listOptionValue builtIn="false" value="Native_API"/>
                                     								
@@ -1197,7 +1195,7 @@
                                 								
                                 <option defaultValue="false" id="sbi.gnu.cpp.linker.option.noundefined.core.1949918392" name="Report unresolved symbol references (-Wl,--no-undefined)" superClass="sbi.gnu.cpp.linker.option.noundefined.core" valueType="boolean"/>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.cpp.linker.option.frameworks_lflags.core.636438385" superClass="sbi.gnu.cpp.linker.option.frameworks_lflags.core" valueType="stringList">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sbi.gnu.cpp.linker.option.frameworks_lflags.core.636438385" name="Tizen-Frameworks-Other-Lflags" superClass="sbi.gnu.cpp.linker.option.frameworks_lflags.core" valueType="stringList">
                                     									
                                     <listOptionValue builtIn="false" value="${TC_LINKER_MISC}"/>
                                     									
@@ -1215,7 +1213,7 @@
                                     								
                                 </option>
                                 								
-                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.paths.1463428575" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
+                                <option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.paths.1463428575" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib}&quot;"/>
                                     								
@@ -1258,8 +1256,6 @@
                     <sourceEntries>
                         						
                         <entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="inc"/>
-                        						
-                        <entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="res"/>
                         						
                         <entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="shared"/>
                         						

@@ -4,15 +4,11 @@
 <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>0H0tLi6RvEWS5VWtkDHeXhfEibUlTr+IO9qHrSew9c0=</DigestValue>
+<DigestValue>PxsV/TIUVItwqEofJcXlxL8KPoTJWnfBD3xWGNpqaY8=</DigestValue>
 </Reference>
 <Reference URI="bin%2Fcontcarboidratos">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>ofbg/X50biMsZe8YDYYEhYO6wKCdAGG1cp2aFF5mhyA=</DigestValue>
-</Reference>
-<Reference URI="lib%2F.DS_Store">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>bPwxpMZR+eQvKXaoiUMHnz0ZihsSbdjmQ8Xs1DBSQJI=</DigestValue>
+<DigestValue>+ofQPZxa5AMPGC0dud1sgilh9uSrnZzmLXPqXmMM0dM=</DigestValue>
 </Reference>
 <Reference URI="shared%2Fres%2Fcontcarboidratos.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -35,11 +31,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-LUoP1Rc6xf+cZv2OhID7bP88xHDVe7FUvSY6wLFVV/QSjlVekXQTYYP3zfx6SLM65En6AEf8LXEc
-C48M1jkJ38i7TTEPWZizSo0AOgKYeh4laFlnX9E8oob43fYqYjs3qyqYgsneMp1/fh58EDsxi47o
-cb+eSnV4RA8ni2hbP4DMuEkBmDDAEyvOLK63QUEpFLzLn16fKnGbrYterOufZbpK2MjxKio2iEEW
-DBp3dcPMEsx3DLFEVkFj+nOYG+E2LXxHbJ9MP9CHKLupOZU4jsBy4z2zZrmo7olaElhG008kzI6M
-0Q/yHU0EnSnHcx/0CQmrUPnlzlp68bHxQDP1BQ==
+EAOwsBXsN1CXWZlBTq+0kUIBakrpgm/R50YLwg3JyU4nBAIJRB6IYKGnfuVOjJ2Z/lp8c/LRAtxO
+ke/NVdCdvhf0XcFBTATBrH6AGF1BaAdSwSF3Y8HDjtrz4jZxnf/qttlgI5gchaKo/9258zLH0po1
+/keeS6VWG4ebZJt8l9amAUYipJtd+bheQWsHxml1AnEntyKQ/78wgUlmIn3ontM3G2bU21dJGqoj
+qBW/ft2cNzvueUGNr0K5Om8m50Z5IMPx9/fwI9hQiRtaLTa0Q3o4kGZ01z1VT6hdVpoDIRcfPTes
+YVO/trs9beOJZoMFkSGU7jpCMe+wJd4gAoELDw==
 </SignatureValue>
 <KeyInfo>
 <X509Data>

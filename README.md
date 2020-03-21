@@ -9,7 +9,7 @@
 
 ## Aplicação Nativa Tizen [Clang]
 
-### Demo (Samsung Watch Galaxy Active 2 - Tizen 4.0.0.7)
+### Demo (Samsung Galaxy Watch Active 2 - Tizen 4.0.0.7)
 
 ### Download
 [TPK](https://github.com/mvrpl/ContagemCarboidratosAPP/raw/native_tizen_watch/Debug/org.mvrpl.contcarboidratos-1.0.0-arm.tpk)

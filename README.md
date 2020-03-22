@@ -8,7 +8,7 @@
 ### Download
 [APK](https://github.com/mvrpl/ContagemCarboidratosAPP/raw/native_android/app/release/app-release.apk)
 
-## Aplicação Nativa Tizen [Clang]
+## Aplicação Nativa Tizen [C]
 
 ### Demo (Samsung Galaxy Watch Active 2 - Tizen 4.0.0.7)
 [![](https://raw.githubusercontent.com/mvrpl/ContagemCarboidratosAPP/master/Watch_1.png)](#)

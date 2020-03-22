@@ -103,6 +103,15 @@ cal_uis(void *data, Evas_Object *obj, void *event_info) {
 }
 
 static void
+key_down(void *data, Evas *e, Evas_Object *obj, void *event_info) {
+	Evas_Event_Key_Down *event = event_info;
+	const char * key = "Return";
+	if (strcmp(event->keyname, key) == 0) {
+		elm_entry_input_panel_hide(obj);
+	}
+}
+
+static void
 create_base_gui(appdata_s *ad)
 {
 	/* Window */
@@ -164,6 +173,7 @@ create_base_gui(appdata_s *ad)
 	elm_entry_text_style_user_push(editGlic, "DEFAULT='font=Tizen:style=Light font_size=50 color=#fff align=center'");
 	elm_object_part_text_set(editGlic, "elm.guide", "<align=center>Glicemia</align>");
 	elm_entry_input_panel_layout_set(editGlic,ELM_INPUT_PANEL_LAYOUT_NUMBERONLY);
+	evas_object_event_callback_add(editGlic, EVAS_CALLBACK_KEY_DOWN, key_down, NULL);
 	elm_table_pack(table, editGlic, 0, 1, 1, 1);
 	evas_object_show(editGlic);
 
@@ -176,6 +186,7 @@ create_base_gui(appdata_s *ad)
 	elm_entry_text_style_user_push(editCarb, "DEFAULT='font=Tizen:style=Light font_size=50 color=#fff align=center'");
 	elm_object_part_text_set(editCarb, "elm.guide", "<align=center>Carboidratos</align>");
 	elm_entry_input_panel_layout_set(editCarb,ELM_INPUT_PANEL_LAYOUT_NUMBERONLY);
+	evas_object_event_callback_add(editCarb, EVAS_CALLBACK_KEY_DOWN, key_down, NULL);
 	elm_table_pack(table, editCarb, 0, 2, 1, 1);
 	evas_object_show(editCarb);
 

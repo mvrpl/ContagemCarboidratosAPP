@@ -8,6 +8,9 @@
 ### Download
 [APK](https://github.com/mvrpl/ContagemCarboidratosAPP/raw/native_android/app/release/app-release.apk)
 
+### Code
+https://github.com/mvrpl/ContagemCarboidratosAPP/tree/native_android
+
 ## Aplicação Nativa Tizen [C]
 
 ### Demo (Samsung Galaxy Watch Active 2 - Tizen 4.0.0.7)
@@ -19,3 +22,6 @@
 
 ### Galaxy Store
 [Calculadora Insulina for Samsung Galaxy Watch](#)
+
+### Code
+https://github.com/mvrpl/ContagemCarboidratosAPP/tree/native_tizen_watch

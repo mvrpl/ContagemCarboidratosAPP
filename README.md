@@ -16,3 +16,6 @@
 
 ### Download
 [TPK](https://github.com/mvrpl/ContagemCarboidratosAPP/raw/native_tizen_watch/Debug/org.mvrpl.contcarboidratos-1.0.0-arm.tpk)
+
+### Galaxy Store
+[Calculadora Insulina for Samsung Galaxy Watch](#)

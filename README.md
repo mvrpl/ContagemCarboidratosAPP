@@ -21,7 +21,7 @@ https://github.com/mvrpl/ContagemCarboidratosAPP/tree/native_android
 [TPK](https://github.com/mvrpl/ContagemCarboidratosAPP/raw/native_tizen_watch/Debug/org.mvrpl.contcarboidratos-1.0.0-arm.tpk)
 
 ### Galaxy Store
-[Calculadora Insulina for Samsung Galaxy Watch](#)
+[Calculadora Insulina for Samsung Galaxy Watch](https://galaxystore.samsung.com/geardetail/org.mvrpl.contcarboidratos)
 
 ### Code
 https://github.com/mvrpl/ContagemCarboidratosAPP/tree/native_tizen_watch

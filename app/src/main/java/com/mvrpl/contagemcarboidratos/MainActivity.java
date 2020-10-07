@@ -28,15 +28,21 @@ public class MainActivity extends AppCompatActivity {
         final TextView resultado = (TextView)findViewById(R.id.resultadoUI);
 
         final EditText valorCarboidratos = (EditText)findViewById(R.id.valorCarboidratos);
+        final EditText valorGorduras = (EditText)findViewById(R.id.valorGorduras);
+        final EditText valorProteinas = (EditText)findViewById(R.id.valorProteinas);
         final EditText uiCarbo = (EditText)findViewById(R.id.valorDePara);
         final EditText valorGlicemia = (EditText)findViewById(R.id.valorGlicemia);
         final EditText glicemiaAlvo = (EditText)findViewById(R.id.valorGA);
         final EditText fatorSens = (EditText)findViewById(R.id.valorFS);
+        final EditText fatorGord = (EditText)findViewById(R.id.valorPercentGord);
+        final EditText fatorProte = (EditText)findViewById(R.id.valorPercentProte);
 
         Map<String, EditText> confs = new HashMap<String, EditText>();
         confs.put("uiCarbo", uiCarbo);
         confs.put("glicemiaAlvo", glicemiaAlvo);
         confs.put("fatorSens", fatorSens);
+        confs.put("fatorGord", fatorGord);
+        confs.put("fatorProte", fatorProte);
 
         final Context contexto = this;
 
@@ -56,12 +62,12 @@ public class MainActivity extends AppCompatActivity {
         telaPrincipal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (valorCarboidratos.getText().toString().length() > 0 && valorGlicemia.getText().toString().length() > 0) {
-                    String res = Integer.toString(
-                            (int) Math.ceil(
-                                    ((Float.parseFloat(valorGlicemia.getText().toString()) - Float.parseFloat(glicemiaAlvo.getText().toString())) / Float.parseFloat(fatorSens.getText().toString()))
-                                            + (Float.parseFloat(valorCarboidratos.getText().toString()) / Float.parseFloat(uiCarbo.getText().toString())))
-                    );
+                if (valorCarboidratos.getText().toString().length() > 0 && valorGlicemia.getText().toString().length() > 0 && valorGorduras.getText().toString().length() > 0 && valorProteinas.getText().toString().length() > 0) {
+                    int correcao = (int) Math.ceil(((Float.parseFloat(valorGlicemia.getText().toString()) - Float.parseFloat(glicemiaAlvo.getText().toString())) / Float.parseFloat(fatorSens.getText().toString())));
+                    int carboidratos_ui = (int) Math.ceil((Float.parseFloat(valorCarboidratos.getText().toString()) / Float.parseFloat(uiCarbo.getText().toString())));
+                    int gorduras_ui = (int) Math.ceil( ((Float.parseFloat(fatorGord.getText().toString()) / 100) * Float.parseFloat(valorGorduras.getText().toString())) / Float.parseFloat(uiCarbo.getText().toString()) );
+                    int proteinas_ui = (int) Math.ceil( ((Float.parseFloat(fatorProte.getText().toString()) / 100) * Float.parseFloat(valorProteinas.getText().toString())) / Float.parseFloat(uiCarbo.getText().toString()) );
+                    String res = Integer.toString((int) Math.ceil(correcao + carboidratos_ui + gorduras_ui + proteinas_ui));
                     resultado.setText(res);
 
                 }
